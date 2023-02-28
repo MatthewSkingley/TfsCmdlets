@@ -162,6 +162,11 @@ namespace TfsCmdlets.Controllers.RestApi
 
         private bool IsHttpMethod(string method)
         {
+            if (string.IsNullOrWhiteSpace(method))
+            {
+                return false;
+            }
+
             try
             {
                 var m = new HttpMethod(method);

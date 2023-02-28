@@ -226,4 +226,42 @@
         /// </summary>
         Both = 3
     }
+
+
+    /// <summary>
+    /// Work Item Query Item Scope
+    /// </summary>
+    [Flags]
+    public enum RepositorySetting
+    {
+        /// <summary>
+        /// Forks: Allow users to create forks from this repository
+        /// </summary>
+        Forks,
+
+        /// <summary>
+        /// Commit mention linking: Automatically create links for work items mentioned in a commit comment
+        /// </summary>
+        WitMentions,
+
+        /// <summary>
+        /// Commit mention work item resolution: Allow mentions in commit comments to close work items (e.g. "Fixes #123")
+        /// </summary>
+        WitResolutionMentions,
+
+        /// <summary>
+        /// Work item transition preferences: Remember user preferences for completing work items with pull requests
+        /// </summary>
+        WitTransitions,
+
+        /// <summary>
+        /// Permissions management: Allow users to manage permissions for the branches they created
+        /// </summary>
+        RepoCreatedBranchesManagePermissionsEnabled,
+
+        /// <summary>
+        /// Strict Vote Mode: Enable Strict Vote Mode for repository which requires Contribute permission to vote in Pull Requests
+        /// </summary>
+        StrictVote
+    }
 }

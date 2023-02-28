@@ -23,7 +23,7 @@ namespace TfsCmdlets.Controllers.Git
                 {
                     case GitRepository repo:
                         {
-                            yield return repo;
+                            yield return GetRepoWithSettings(repo, IncludeSettings);
                             break;
                         }
                     case Guid guid:
@@ -95,6 +95,13 @@ namespace TfsCmdlets.Controllers.Git
                         }
                 }
             }
+        }
+
+        private object GetRepoWithSettings(GitRepository repo, bool includeSettings)
+        {
+            if(!includeSettings) return repo;
+
+            var client = GetClient<GitHttpClient>();
         }
     }
 }

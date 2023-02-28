@@ -30,5 +30,11 @@ namespace TfsCmdlets.Cmdlets.Git
         /// </summary>
         [Parameter()]
         public SwitchParameter IncludeParent { get; set; }
+
+        /// <summary>
+        /// Includes repository settings in the output.
+        /// </summary>
+        [Parameter]
+        public SwitchParameter IncludeSettings { get; set; }
     }
 }
